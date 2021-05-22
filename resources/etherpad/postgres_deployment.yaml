@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+[2;2Rrsion: apps/v1
 kind: Deployment
 metadata:
   name: postgresql
@@ -65,5 +65,6 @@ spec:
       restartPolicy: Always
       volumes:
       - name: postgresql-data
-        emptyDir:
-          medium: ""
+        persistentVolumeClaim:
+          claimName: postgresql
+        
